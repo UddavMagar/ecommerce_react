@@ -66,18 +66,8 @@ class ProductDetail extends Component {
 
         return(
 <div className="max-w-6xl mx-auto p-6 flex flex-col md:flex-row gap-8">
-        {/* Left info */}
-        <div className="flex-1 flex flex-col justify-center space-y-6">
-          <h1 className="text-3xl font-bold">{product.name}</h1>
-          <p className="text-xl text-green-600">{USDTONRP(product.price)}</p>
-          <p className="text-gray-700 whitespace-pre-line">{product.description}</p>
-          <button className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition">
-            Add to Cart
-          </button>
-        </div>
 
-        {/* Right images */}
-        <div className="flex-1 flex flex-col items-center">
+                <div className="flex-1 flex flex-col items-center">
           {/* Big image */}
           {images.length > 0 ? (
             <img
@@ -104,6 +94,16 @@ class ProductDetail extends Component {
             ))}
           </div>
         </div>
+
+        <div className="flex-1 flex flex-col justify-center space-y-6">
+          <h1 className="text-3xl font-bold">{product.name}</h1>
+          <p className="text-gray-700 whitespace-pre-line text-secondary-text">{product.description}</p>
+          <p className="text-xl text-green-600">{USDTONRP(product.price)}</p>
+          <button className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition">
+            Add to Cart
+          </button>
+        </div>
+
       </div>
         );
     }
