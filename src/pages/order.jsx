@@ -61,7 +61,7 @@ class Order extends Component {
           </Link>
           </div>
         ) : (
- <>
+        <>
           <h2 className="text-2xl font-bold text-primary mb-4">Warning</h2>
           <p className="text-gray-700 mb-6">
            ⚠️  This is a portfolio project created for <strong>educational purposes</strong>. <br />

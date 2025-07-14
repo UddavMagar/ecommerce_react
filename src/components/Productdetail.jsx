@@ -15,7 +15,7 @@ class ProductDetail extends Component {
         this.slideInterval = null;
     }
 
-    async componentDidMount() {
+  async componentDidMount() {
         const { id } = this.props.params;
         
         try {
@@ -31,9 +31,9 @@ class ProductDetail extends Component {
 
     }   
     
-    componentWillUnmount() {
-    this.stopSlideShow();
-  }
+  componentWillUnmount() {
+      this.stopSlideShow();
+    }
 
   startSlideShow = () => {
     this.slideInterval = setInterval(() => {
@@ -65,21 +65,18 @@ class ProductDetail extends Component {
         const images = product.gallery || [];
 
         return(
-<div className="max-w-6xl mx-auto p-6 flex flex-col md:flex-row gap-8">
+          <div className="max-w-6xl mx-auto p-6 flex flex-col md:flex-row gap-8">
+            <div className="flex-1 flex flex-col items-center">
+            {images.length > 0 ? (
+              <img
+                src={images[selectedImageIndex].image}
+                alt={product.name}
+                className="w-full h-96 object-contain rounded-lg mb-4 shadow-lg"
+              />
+            ) : (
+              <p>No images available</p>
+            )}
 
-                <div className="flex-1 flex flex-col items-center">
-          {/* Big image */}
-          {images.length > 0 ? (
-            <img
-              src={images[selectedImageIndex].image}
-              alt={product.name}
-              className="w-full h-96 object-contain rounded-lg mb-4 shadow-lg"
-            />
-          ) : (
-            <p>No images available</p>
-          )}
-
-          {/* Thumbnails */}
           <div className="flex space-x-3 overflow-x-auto">
             {images.map((imgObj, index) => (
               <img
@@ -105,8 +102,8 @@ class ProductDetail extends Component {
         </div>
 
       </div>
-        );
-    }
+    );
+  }
 }
 
 export default withRouter(ProductDetail);

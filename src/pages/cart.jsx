@@ -5,7 +5,7 @@ import { withRouter } from '../utils/withRouter';
 import { USDTONRP } from '../utils/priceutils';
 
 class Cart extends Component {
-    static contextType = AuthContext;
+  static contextType = AuthContext;
     
     constructor(props) {
     super(props);
@@ -66,43 +66,37 @@ class Cart extends Component {
     }));
   };
 
-handleCheckboxChange = (itemId) => {
-  const item = this.state.cartItems.find(item => item.id === itemId);
-  if (!item || item.inventory_quantity === 0) return;
+  handleCheckboxChange = (itemId) => {
+    const item = this.state.cartItems.find(item => item.id === itemId);
+    if (!item || item.inventory_quantity === 0) return;
 
-  this.setState(prevState => {
-    const selectedItems = new Set(prevState.selectedItems);
-    if (selectedItems.has(itemId)) {
-      selectedItems.delete(itemId);
-    } else {
-      selectedItems.add(itemId);
-    }
-    return { selectedItems };
-  });
-};
+    this.setState(prevState => {
+      const selectedItems = new Set(prevState.selectedItems);
+      if (selectedItems.has(itemId)) {
+        selectedItems.delete(itemId);
+      } else {
+        selectedItems.add(itemId);
+      }
+      return { selectedItems };
+    });
+  };
 
 
   handlePlaceOrder = () => {
+    const selectedItemsArray = Array.from(this.state.selectedItems);  // Convert Set to Array
 
-const selectedItemsArray = Array.from(this.state.selectedItems);  // Convert Set to Array
+    const orderedItems = this.state.cartItems
+    .filter(item => selectedItemsArray.includes(item.id))
+    .map(item => ({
+      name: item.product_name,
+      quantity: item.quantity,
+    }));
 
-const orderedItems = this.state.cartItems
-  .filter(item => selectedItemsArray.includes(item.id))
-  .map(item => ({
-    name: item.product_name,
-    quantity: item.quantity,
-  }));
-
-this.props.navigate('/order', {
-  state: {
-    orderedItems,
-  },
-});
-
-
-
-    // TODO: axios.post('order-api-endpoint', { items: orderItems })
-    // then handle success or error
+    this.props.navigate('/order', {
+      state: {
+        orderedItems,
+      },
+    });
   };
 
   render() {

@@ -11,7 +11,9 @@ class Footer extends Component {
           <div>
             <h3 className="text-lg font-semibold mb-2">About the Developer</h3>
             <p>
-              Created by <a href="https://your-portfolio.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Er. Uddav Bahadur Pulami Magar</a>
+              Created by <a href="https://your-portfolio.com" target="_blank" 
+              rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                Er. Uddav Bahadur Pulami Magar</a>
             </p>
             <p className="text-sm text-gray-400">Computer Engineer</p>
           </div>
@@ -23,17 +25,20 @@ class Footer extends Component {
             <p>Email: <button className="text-blue-500 hover:underline">uddav.magar73@gmail.com</button></p>
             
             <p>Location: Dhapakhel-24, Laltipur</p>
-                              <div className="flex space-x-6 pt-4">
-          <a href="https://uddav.xyz/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary">
-            <Globe className="w-6 h-6" />
-          </a>
-          <a href="https://www.linkedin.com/in/uddavmagar/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
-            <Linkedin className="w-6 h-6" />
-          </a>
-          <a href="https://github.com/UddavMagar" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black">
-            <Github className="w-6 h-6" />
-          </a>
-        </div>
+            <div className="flex space-x-6 pt-4">
+                <a href="https://uddav.xyz/" target="_blank" 
+                rel="noopener noreferrer" className="text-gray-600 hover:text-primary">
+                    <Globe className="w-6 h-6" />
+                </a>
+                <a href="https://www.linkedin.com/in/uddavmagar/" target="_blank" 
+                rel="noopener noreferrer" className="text-gray-600 hover:text-blue-700">
+                    <Linkedin className="w-6 h-6" />
+                </a>
+                <a href="https://github.com/UddavMagar" target="_blank" rel="noopener noreferrer"
+                 className="text-gray-600 hover:text-black">
+                    <Github className="w-6 h-6" />
+                </a>
+            </div>
           </div>
 
 
@@ -55,7 +60,8 @@ class Footer extends Component {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-400">
-          <p>⚠️ This website is for <span className="text-white font-medium">educational purposes</span> only. No real orders or payments are processed.</p>
+          <p>⚠️ This website is for <span className="text-white font-medium">
+            educational purposes</span> only. No real orders or payments are processed.</p>
           <p className="mt-2">© {new Date().getFullYear()} Built by Uddav Bahadur Pulami Magar</p>
         </div>
       </footer>

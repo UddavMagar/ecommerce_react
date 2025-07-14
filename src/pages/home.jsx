@@ -57,7 +57,7 @@ componentDidUpdate(prevProps, prevState) {
     const searchQuery = currentQuery.get("query") || "";
     this.fetchProducts(searchQuery);
   }
-}
+  }
 
 
   fetchCategories = async () => {

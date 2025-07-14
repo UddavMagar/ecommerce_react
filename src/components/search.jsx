@@ -80,7 +80,6 @@ class SearchBar extends Component {
 
     return (
       <div className="relative">
-        {/* Toggle Button for Mobile */}
         <button
           type="button"
           onClick={this.toggleMobileInput}
@@ -93,7 +92,6 @@ class SearchBar extends Component {
           )}
         </button>
 
-        {/* Search Input Box */}
         <div className={`relative ${showMobileInput ? 'block' : 'hidden'} md:block w-64`}>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
@@ -106,7 +104,6 @@ class SearchBar extends Component {
               placeholder="Search products..."
               className="w-full pl-10 px-4 py-2 pr-10 border rounded focus:outline-none focus:ring focus:ring-primary bg-white"
             />
-            {/* X icon inside input */}
             {query && (
               <X
                 className="absolute right-3 top-2.5 h-4 w-4 text-gray-500 cursor-pointer"
@@ -115,7 +112,6 @@ class SearchBar extends Component {
             )}
           </div>
 
-          {/* Search button for mobile (not shown on md+) */}
           {showMobileInput && (
             <button
               className="mt-1 w-full md:hidden bg-primary text-white py-2 rounded hover:bg-primary-dark"
@@ -125,7 +121,6 @@ class SearchBar extends Component {
             </button>
           )}
 
-          {/* Suggestions */}
           {showResults && results.length > 0 && (
             <ul className="absolute z-30 w-full bg-white border rounded shadow max-h-60 overflow-y-auto">
               {results.map((item) => (
